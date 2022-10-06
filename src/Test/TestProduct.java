@@ -8,6 +8,7 @@ public class TestProduct {
     private final String product;
     private final double price;
     private final int productId;
+    private String TESTSTRING;
 
     public TestProduct(String categoryName, String Product, double price, int productId) {
         this.categoryName = categoryName;
