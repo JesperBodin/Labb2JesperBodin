@@ -12,10 +12,10 @@ public class ProductHandler {
 
     private static List<Product> getProduct () { //TODO skriv från fil
         return List.of(
-                new Product(new Category("Fruit"), "banana", 5, "Dole", "00001", 50),
-                new Product(new Category("Dairy"), "milk", 21, "Arla", "00002", 3),
-                new Product(new Category("Candy"), "Chocolate", 24, "Marabou", "00003", 40),
-                new Product(new Category("Bread"), "Skogaholms limpa", 29, "Polarbröd", "00004", 15));
+                new Product(new Category("FRUIT"), "banana", 5, "Dole", "00001", 50),
+                new Product(new Category("DAIRY"), "milk", 21, "Arla", "00002", 3),
+                new Product(new Category("CANDY"), "Chocolate", 24, "Marabou", "00003", 40),
+                new Product(new Category("BREAD"), "Skogaholms limpa", 29, "Polarbröd", "00004", 15));
     }
 
     public static void printProducts(){
@@ -34,11 +34,9 @@ public class ProductHandler {
         System.out.println("Search Category:");
         String userSerach = scanner.nextLine().toUpperCase();
 
-//        CategoryHandler.categoryList.stream()
-//                .map(Category::getCategoryName)
-//                .filter(categoryName ->categoryName
-//                .contains(userSerach.toUpperCase()))
-//                .forEach(System.out::println);
+        ProductHandler.productList.stream()
+                .filter(product ->product.getCategory().getCategoryName().equals(userSerach))
+                .forEach(System.out::println);
 
     }
     public static void handleProductStock(){

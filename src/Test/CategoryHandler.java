@@ -12,9 +12,11 @@ public class CategoryHandler {
 
 
 
-    public static void SearchCategory() {
-        System.out.println("Finding categories..");
-    }
+//    public static void SearchCategory(List<Category> categoryList) {
+//
+////        categoryList.stream()
+////                .filter(category -> category.getCategoryName())
+////}
 
     public static void createNewCategory() {
         System.out.println("Insert the name of the new category:");
@@ -37,12 +39,7 @@ public class CategoryHandler {
                 new Category("FRUIT"),
                 new Category("DAIRY"),
                 new Category("CANDY"),
-                new Category("BREAD"),
-                new Category("SPIRITS"),
-                new Category("WINE"),
-                new Category("BEER"));
-
-
+                new Category("BREAD"));
     }
 
 

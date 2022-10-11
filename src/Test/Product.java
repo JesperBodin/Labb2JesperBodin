@@ -95,7 +95,7 @@ public class Product {
     public String toString() {
         return "Category: " + category +
                 ", Product name: " + name +
-                ", Price: " + price +
+                ", Price: " + price + "kr"+
                 ", Brand: " + brand +
                 ", ID: " + productId +
                 ", Balance: " + balance +
