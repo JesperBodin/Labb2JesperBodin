@@ -1,7 +1,5 @@
 package Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -24,20 +22,19 @@ public class TestMain {
                 scanner.nextLine();
                 switch (menuOneInput) {
                     case '1':
-                        CategoryHandler.listCategories();
-                        break;
-                    case '2':
-                        CategoryHandler.createNewCategory();
-                        break;
-                    case '3':
                         ProductHandler.printProducts();
                         break;
+                    case '2':
+                        ProductHandler.createNewProduct();
+                        break;
+                    case '3':
+                        ProductHandler.searchProduct();
+                        break;
                     case '4':
-                        ProductHandler.handleProductStock();
+                        ProductHandler.searchProductByPrice();
                         break;
                     case '5':
-                        System.out.println("Search");
-                        ProductHandler.printProductByCategory();
+                        ProductHandler.removeProduct();
                         break;
                     case 'e','E':
                         runMenu = false;
@@ -54,11 +51,11 @@ public class TestMain {
         private static void mainMenu () {
             String menuText = """
                     --------Welcome--------
-                    1. Browse categories
-                    2. Create new category
-                    3. Browse products
-                    4. Manage inventory
-                    5. Search for products
+                    1. Browse Products
+                    2. Add New Product
+                    3. Search Category/Product
+                    4. Search Product by price
+                    5. Remove Product
                     e. Exit Program""";
             System.out.println(menuText);
         }

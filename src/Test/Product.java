@@ -13,11 +13,11 @@ public class Product {
     private int balance;
 
     public Product(Category category, String name, int price,
-                   String label, String productId, int stock) {
+                   String brand, String productId, int stock) {
         this.category = category;
         this.name = name;
         this.price = price;
-        this.brand = label;
+        this.brand = brand;
         this.productId = productId;
         this.balance = stock;
     }
