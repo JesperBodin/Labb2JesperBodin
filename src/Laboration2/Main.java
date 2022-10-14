@@ -1,14 +1,14 @@
-package Test;
+package Laboration2;
 
 import java.util.Scanner;
 
 
-public class TestMain {
+public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
+        CSVReader.csvProductList();
         runMenu();
 
     }
@@ -36,10 +36,15 @@ public class TestMain {
                     case '5':
                         ProductHandler.removeProduct();
                         break;
-                    case 'e','E':
-                        runMenu = false;
-                        System.out.println("Closing Program");
+                    case '6':
+                        CSVReader.saveProduct();
                         break;
+                    case '7':
+                        break;
+                    case 'e','E':
+                        CSVReader.saveProduct();
+                        System.out.println("Closing & Saving");
+                        System.exit(0);
                     default:
                         System.out.println("Enter a valid input");
                 }
@@ -56,13 +61,9 @@ public class TestMain {
                     3. Search Category/Product
                     4. Search Product by price
                     5. Remove Product
-                    e. Exit Program""";
+                    6. Manage Inventory
+                    e. Exit & Save Program""";
             System.out.println(menuText);
-        }
-
-        public static void backToMenu() {
-            System.out.println("Press \"ENTER\" to return");
-            scanner.nextLine();
         }
 
     }
