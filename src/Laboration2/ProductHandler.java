@@ -6,9 +6,7 @@ import java.util.Scanner;
 import static Laboration2.CSVReader.productList;
 
 public class ProductHandler {
-
     static Scanner scanner = new Scanner(System.in);
-
 
     public static void printProducts() {
         System.out.println("PRODUCTS");
@@ -59,7 +57,7 @@ public class ProductHandler {
 
         backToMenu();
 
-    } //TODO KLAR!
+    }
     public static void searchProductByPrice() {
 
         try {
@@ -81,7 +79,7 @@ public class ProductHandler {
             System.out.println("Invalid input");
         }
 
-    } //TODO KLAR!
+    }
     public static void printProductName() {
         System.out.println("-----Products-----");
         productList.stream()
@@ -108,7 +106,6 @@ public class ProductHandler {
         }
     }
 
-
     public static void productManagerMenu() {
         printProductName();
         System.out.println("Type in the product you want to manage: ");
@@ -117,7 +114,7 @@ public class ProductHandler {
                 -------PRODUCT MANAGER-------
                 1. Change Product name
                 2. Change Category
-                3. Add/Remove from stock
+                3. Change Balance
                 4. Change Price
                 e.Back to Main Menu""";
 
@@ -127,7 +124,7 @@ public class ProductHandler {
         switch (userInput) {
             case '1' -> changeProductName(userProductChoice);
             case '2' -> changeCategory(userProductChoice);
-            case '3' -> changeStock(userProductChoice);
+            case '3' -> changeBalance(userProductChoice);
             case '4' -> changePrice(userProductChoice);
             case 'e' -> scanner.nextLine();
             default -> System.out.println("Enter a valid input");
@@ -154,7 +151,7 @@ public class ProductHandler {
 
         System.out.println("Category updated");
     }
-    private static void changeStock(String userChoice) {
+    private static void changeBalance(String userChoice) {
         scanner.nextLine();
         System.out.println("Enter new balance for product");
         int newBalance = scanner.nextInt();
@@ -166,7 +163,7 @@ public class ProductHandler {
     }
     private static void changePrice(String userChoice) {
         scanner.nextLine();
-        System.out.println("Enter new balance for product");
+        System.out.println("Enter new price for product");
         double newPrice = scanner.nextInt();
         productList.stream()
                 .filter(product -> product.getName().equals(userChoice))
