@@ -5,12 +5,12 @@ import java.util.Objects;
 
 public class Product {
 
-    private final String category;
-    private final String name;
-    private final double price;
+    private String category;
+    private  String name;
+    private double price;
     private final String brand;
-    private  final String productId;
-    private final int balance;
+    private final String productId;
+    private int balance;
 
     public Product(String category, String name, double price,
                    String brand, String productId, int balance) {
@@ -41,6 +41,20 @@ public class Product {
     public int getBalance() {
         return balance;
     }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -107,14 +107,73 @@ public class ProductHandler {
             System.out.println("Invalid input");
         }
     }
-    public static void addOrRemoveFromStock() {
 
 
-//    public static void newStorageAmount(int userInput) {  //TODO Input crashar med bokstav
-//        System.out.print("Enter amount:");
-//        productList.get(userInput - 1).setBalance(scanner.nextInt());
-//        productManager();
-   }
+    public static void productManagerMenu() {
+        printProductName();
+        System.out.println("Type in the product you want to manage: ");
+        String userProductChoice = scanner.nextLine().toUpperCase();
+                String menuText = """
+                -------PRODUCT MANAGER-------
+                1. Change Product name
+                2. Change Category
+                3. Add/Remove from stock
+                4. Change Price
+                e.Back to Main Menu""";
+
+        System.out.println(menuText);
+
+        char userInput =scanner.next().charAt(0);
+        switch (userInput) {
+            case '1' -> changeProductName(userProductChoice);
+            case '2' -> changeCategory(userProductChoice);
+            case '3' -> changeStock(userProductChoice);
+            case '4' -> changePrice(userProductChoice);
+            case 'e' -> scanner.nextLine();
+            default -> System.out.println("Enter a valid input");
+        }
+    }
+
+    private static void changeProductName (String userChoice) {
+        scanner.nextLine();
+        System.out.println("Enter new name for product");
+        String newName = scanner.nextLine().toUpperCase();
+        productList.stream()
+                .filter(product -> product.getName().equals(userChoice))
+                .forEach(product -> product.setName(newName));
+
+        System.out.println("Name updated");
+    }
+    private static void changeCategory (String userChoice){
+        scanner.nextLine();
+        System.out.println("Enter new category for product");
+        String newCategory = scanner.nextLine().toUpperCase();
+        productList.stream()
+                .filter(product -> product.getName().equals(userChoice))
+                .forEach(product -> product.setCategory(newCategory));
+
+        System.out.println("Category updated");
+    }
+    private static void changeStock(String userChoice) {
+        scanner.nextLine();
+        System.out.println("Enter new balance for product");
+        int newBalance = scanner.nextInt();
+        productList.stream()
+                .filter(product -> product.getName().equals(userChoice))
+                .forEach(product -> product.setBalance(newBalance));
+
+        System.out.println("Balance updated");
+    }
+    private static void changePrice(String userChoice) {
+        scanner.nextLine();
+        System.out.println("Enter new balance for product");
+        double newPrice = scanner.nextInt();
+        productList.stream()
+                .filter(product -> product.getName().equals(userChoice))
+                .forEach(product -> product.setPrice(newPrice));
+
+        System.out.println("Price updated");
+    }
 
     public static void backToMenu() {
         System.out.println("Press \"ENTER\" to return");
