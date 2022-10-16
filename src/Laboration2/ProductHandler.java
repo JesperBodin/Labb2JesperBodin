@@ -87,7 +87,7 @@ public class ProductHandler {
                 .sorted()
                 .forEach(System.out::println);
 
-    } //används till removeProduct()
+    }
     public static void removeProduct() {
         printProductName();
         System.out.println("Choose a product to remove by typing it below: ");
@@ -112,11 +112,11 @@ public class ProductHandler {
         String userProductChoice = scanner.nextLine().toUpperCase();
                 String menuText = """
                 -------PRODUCT MANAGER-------
-                1. Change Product name
+                1. Change Product Name
                 2. Change Category
                 3. Change Balance
                 4. Change Price
-                e.Back to Main Menu""";
+                e. Back to Main Menu""";
 
         System.out.println(menuText);
 
@@ -160,6 +160,7 @@ public class ProductHandler {
                 .forEach(product -> product.setBalance(newBalance));
 
         System.out.println("Balance updated");
+        scanner.nextLine();
     }
     private static void changePrice(String userChoice) {
         scanner.nextLine();
@@ -170,6 +171,7 @@ public class ProductHandler {
                 .forEach(product -> product.setPrice(newPrice));
 
         System.out.println("Price updated");
+        scanner.nextLine();
     }
 
     public static void backToMenu() {
